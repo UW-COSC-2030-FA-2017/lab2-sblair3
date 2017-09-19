@@ -1,3 +1,4 @@
+//Samuel Blair
 // LinkedList.h
 
 // tom bailey   0740  5 oct 2010
@@ -15,7 +16,7 @@
 #include <iostream>
 using std::ostream;
 
-#include "Node.cpp"
+#include "Node.h"
 
 #define ulong unsigned long
 
@@ -66,6 +67,16 @@ public:
 	//         from this List and has been returned.
 	double removeFirst();
 
+	//Get Size of the list
+	int listSize();
+
+	//Get the sum of values in the list
+
+	double listSum();
+
+//insert a value to the end of the list
+	void insertAsLast(double x);
+
 private:
 	//*** Inaccessible standard functions ***
 
@@ -90,3 +101,4 @@ private:
 ostream & operator<<(ostream & outfile, const List & list);
 
 #endif
+#pragma once
