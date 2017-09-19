@@ -1,3 +1,4 @@
+//Samuel Blair
 // LinkedList.cpp
 
 // tom bailey   0745  5 oct 2010
@@ -65,6 +66,68 @@ double List::removeFirst()
 	return item;
 }
 
+int List::listSize()
+{
+	int size(0);
+	if (!empty())
+	{
+		
+		Node * ptr = first_;
+		while (ptr != NULL)
+		{
+			size++;
+			ptr = ptr->next_;
+		}
+	}
+	return size;
+}
+
+double List::listSum()
+{
+	double sum(0);
+	if (!empty())
+	{
+		
+		Node * ptr = first_;
+		
+		while (ptr != NULL)
+		{
+			sum+= ptr->entry_;
+			ptr = ptr->next_;
+		}
+	}
+	return sum;
+}
+
+void List::insertAsLast(double x)
+{
+	if (!empty())
+	{
+			Node * ptr = first_;
+
+			while (ptr != NULL)
+			{
+				if (!ptr->next_)
+				{
+					Node* last_ = new Node(x);
+					ptr->next_ = last_;
+					break;
+				}
+				else 
+				{ 
+					ptr = ptr->next_;
+				}
+			}
+			
+			
+			
+	}
+	else
+	{
+		insertAsFirst(x);
+	}
+}
+
 
 void List::print(ostream & outfile) const
 {
@@ -126,5 +189,3 @@ ostream & operator<<(ostream & outfile, const List & list)
 	list.print(outfile);
 	return outfile;
 }
-
-
